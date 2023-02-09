@@ -5,7 +5,7 @@ February 09, 2023
 
 # Essential libraries
 
-A list of essential libraries will also be necessary, so these have been
+A list of essential libraries is also necessary, so these have been
 compiled, with continuous updates, to be sourced using a single script.
 
 Note that currently, the checkpoint package is used to install and load
@@ -38,6 +38,42 @@ The list of essential libraries are:
       - flextable v0.5.0
   - Data output
       - openxlsx v4.1.0
+
+# PHRDWquery functions
+
+A few functions have been developed for the needs to easily pull data
+from the Public Health Reporting Data Warehouse (PHRDW). These functions
+have been compiled into a script where sourcing the script simply loads
+in the functions.
+
+``` r
+source("PHRDWquery.R")
+```
+
+## `PHRDW_getCodes()`
+
+`PHRDW_getCodes()` retreives a list of available order and test codes
+from one of the Enteric, LADW, Respiratory, or STIBBI PHRDW mart.
+
+## `PHRDW_pullResults()`
+
+`PHRDW_pullResults()` pulls a line list from a particular PHRDW mart.
+The fields pulled by default include personal information and results.
+Parameters can be defined to filter the pulled data for a particular
+test code, etc.
+
+Currently the available parameters are:
+
+  - mart
+  - collectiondate\_start = NULL
+  - collectiondate\_end = NULL
+  - orderdate\_start = NULL
+  - orderdate\_end = NULL
+  - additional\_fields = NULL
+  - testcode = NULL
+  - proficiency = NULL
+  - testperformed = T
+  - criteria = NULL
 
 # Session Info
 

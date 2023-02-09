@@ -25,9 +25,6 @@
 #
 #------------------------------------------------------------------------------#
 
-# Required libraries
-source(file.path("H:", "LabAdmn", "Kevin Yang", "Codes", "EssentialLibraries.R"))
-
 # Function to construct an MDX ----
 PHRDW_pullResults <- function(mart = NULL, collectiondate_start = NULL, 
                               collectiondate_end = NULL, orderdate_start = NULL,

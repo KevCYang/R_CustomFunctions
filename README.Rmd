@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = T, message = F)
 
 # Essential libraries
 
-A list of essential libraries will also be necessary, so these have been compiled, with continuous updates, to be sourced using a single script.
+A list of essential libraries is also necessary, so these have been compiled, with continuous updates, to be sourced using a single script.
 
 Note that currently, the checkpoint package is used to install and load packages from the Microsoft R Application Network (MRAN), which stores daily snapshots from CRAN. This approach ensures that the packages loaded and installed have consistent versions therefore guarantees reproducibility. However, MRAN and checkpoint will be retired as of July 2023, so an alternative route will be needed.
 
@@ -43,6 +43,36 @@ The list of essential libraries are:
 
 * Data output
   + openxlsx v`r packageVersion("openxlsx")`
+
+# PHRDWquery functions
+
+A few functions have been developed for the needs to easily pull data from the Public Health Reporting Data Warehouse (PHRDW). These functions have been compiled into a script where sourcing the script simply loads in the functions.
+
+```{r}
+source("PHRDWquery.R")
+```
+
+## `PHRDW_getCodes()`
+
+`PHRDW_getCodes()` retreives a list of available order and test codes from one of the Enteric, LADW, Respiratory, or STIBBI PHRDW mart.
+
+## `PHRDW_pullResults()`
+
+`PHRDW_pullResults()` pulls a line list from a particular PHRDW mart. The fields pulled by default include personal information and results. Parameters can be defined to filter the pulled data for a particular test code, etc.
+
+Currently the available parameters are:
+
+* mart
+* collectiondate_start = NULL
+* collectiondate_end = NULL
+* orderdate_start = NULL
+* orderdate_end = NULL
+* additional_fields = NULL
+* testcode = NULL
+* proficiency = NULL
+* testperformed = T
+* criteria = NULL
+
 
 # Session Info
 ```{r}

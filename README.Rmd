@@ -1,30 +1,51 @@
 ---
 title: "R custom functions"
-author: "Kevin C Yang"
-date: "2/9/2023"
+subtitle: "Definition and description of R custom functions for various scripts"
+author: Kevin C Yang
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = T, message = F)
 ```
 
-## R Markdown
+# Essential libraries
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+A list of essential libraries will also be necessary, so these have been compiled, with continuous updates, to be sourced using a single script.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Note that currently, the checkpoint package is used to install and load packages from the Microsoft R Application Network (MRAN), which stores daily snapshots from CRAN. This approach ensures that the packages loaded and installed have consistent versions therefore guarantees reproducibility. However, MRAN and checkpoint will be retired as of July 2023, so an alternative route will be needed.
 
-```{r cars}
-summary(cars)
+```{r}
+source("EssentialLibraries.R")
 ```
 
-## Including Plots
+The list of essential libraries are:  
 
-You can also embed plots, for example:
+* Core libraries
+  + tidyverse v`r packageVersion("tidyverse")`
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+* Data access
+  + olapR v`r packageVersion("olapR")`
+  + RODBC v`r packageVersion("RODBC")`
+  + readxl v`r packageVersion("readxl")`
+
+* Data wrangling
+  + reshape2 v`r packageVersion("reshape2")`
+  + lubridate v`r packageVersion("lubridate")`
+  + magrittr v`r packageVersion("magrittr")`
+
+* Data visualization
+  + ggpubr v`r packageVersion("ggpubr")`
+  + RColorBrewer v`r packageVersion("RColorBrewer")`
+  + viridis v`r packageVersion("viridis")`
+  + flextable v`r packageVersion("flextable")`
+
+* Data output
+  + openxlsx v`r packageVersion("openxlsx")`
+
+# Session Info
+```{r}
+sessionInfo()
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

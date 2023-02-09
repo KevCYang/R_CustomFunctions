@@ -1,8 +1,8 @@
 ---
-title: "R Custom Functions"
+title: "R custom functions"
 author: "Kevin C Yang"
 date: "2/9/2023"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}

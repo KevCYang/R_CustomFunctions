@@ -38,6 +38,9 @@ The list of essential libraries are:
       - flextable v0.5.0
   - Data output
       - openxlsx v4.1.0
+      - knitr v1.21
+  - Others
+      - mailR v0.4.1
 
 # PHRDWquery functions
 

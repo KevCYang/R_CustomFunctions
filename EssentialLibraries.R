@@ -41,6 +41,10 @@ library(flextable)
 
 # Data output
 library(openxlsx)
+library(knitr)
+
+# Others
+library(mailR)
 
 
 

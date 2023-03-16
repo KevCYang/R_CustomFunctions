@@ -162,7 +162,7 @@ PHRDW_pullResults <- function(mart = NULL, collectiondate_start = NULL,
     filt_perf <- ""
   }
   ## Assemble all filters including additional criteria if any
-  if (any(filt_testcode != "", filt_prof != "", filt_perf != "", criteria != NULL)) {
+  if (any(filt_testcode != "", filt_prof != "", filt_perf != "", !is.null(criteria))) {
     q_filter <- paste0(" WHERE (", 
                        c(filt_testcode, filt_prof, filt_perf, criteria) %>%
                          .[nzchar(.)] %>% paste(., collapse = ","), 

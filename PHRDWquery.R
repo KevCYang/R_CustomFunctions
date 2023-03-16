@@ -39,12 +39,10 @@ PHRDW_pullResults <- function(mart = NULL, collectiondate_start = NULL,
                                   Cube = "RespiratoryDM"),
                STIBBI = list(Database = "PHRDW_STIBBI", Cube = "StibbiDM_LADW"))
   # Check parameters
-  print("Checking parameters...")
+  message("Checking parameters...")
   ## Check that a valid mart name is provided
   if (!(mart %in% names(marts))) {
     stop("A valid mart name must be provided and should be one of LADW, Enteric, Respiratory or STIBBI")
-  } else {
-    print(paste("Using the", mart, "mart..."))
   }
   ## Check the dates are in the correct format of YYYY-MM-DD
   dcheck <- c(collectiondate_start, collectiondate_end, orderdate_start, orderdate_end)
@@ -200,6 +198,7 @@ PHRDW_pullResults <- function(mart = NULL, collectiondate_start = NULL,
   ### Add TestCount to colnames
   cnames <- c(cnames, "TestCount")
   ## Run query and set column names
+  message("Pulling from the ", mart, "mart...")
   res <- execute2D(connection, query) %>%
     set_colnames(cnames) %>%
     select(-TestCount)

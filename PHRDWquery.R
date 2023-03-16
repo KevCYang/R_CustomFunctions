@@ -185,7 +185,7 @@ PHRDW_pullResults <- function(mart = NULL, collectiondate_start = NULL,
   } else {
     cnames <- c(cnames, "Date_Collection")
   }
-  cnames <- c(cnames, "Results_FulLDescription")
+  cnames <- c(cnames, "Results_FullDescription")
   ### Add additional fields if applicable
   if (addlfield != "") {
     cnames <- additional_fields %>% 

@@ -96,7 +96,7 @@ PHRDW_pullResults <- function(mart = NULL, collectiondate_start = NULL,
   ### Other fields to pull
   if (!is.null(additional_fields)) {
     addlfield <- additional_fields %>%
-      str_replace(., ",", "*") %>%
+      str_replace_all(., ",", "*") %>%
       paste0("*", .)
   } else {
     addlfield <- ""
